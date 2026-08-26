@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://er45mo73ra8h"]
+
+[ext_resource type="Script" uid="uid://bi4vr1kuvjft0" path="res://scripts/snake script.gd" id="1_l4b1q"]
+[ext_resource type="PackedScene" uid="uid://o1db2wnw0n0d" path="res://scenes/Tail_1.tscn" id="2_4j5f3"]
+[ext_resource type="PackedScene" uid="uid://cweveop80yr42" path="res://scenes/Tail_2.tscn" id="3_1p8c4"]
+[ext_resource type="PackedScene" uid="uid://l3oh3xice8ax" path="res://scenes/Tail_3.tscn" id="4_oj63r"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b618t"]
+albedo_color = Color(0.6, 0.76862746, 0.003921569, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_cv6p3"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_8spsg"]
+
+[node name="Snake" type="CharacterBody3D" unique_id=1893879316]
+script = ExtResource("1_l4b1q")
+
+[node name="Head" type="Node3D" parent="." unique_id=1113832427]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Head" unique_id=263847941]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 7)
+current = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Head" unique_id=1012442718]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.94074094, 0)
+material_override = SubResource("StandardMaterial3D_b618t")
+mesh = SubResource("SphereMesh_cv6p3")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1322309807]
+shape = SubResource("SphereShape3D_8spsg")
+
+[node name="Tails" type="Node3D" parent="." unique_id=671442169]
+
+[node name="Tail" parent="Tails" unique_id=1969613569 instance=ExtResource("2_4j5f3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
+
+[node name="Tail2" parent="Tails" unique_id=1681450680 instance=ExtResource("3_1p8c4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+
+[node name="Tail3" parent="Tails" unique_id=300101991 instance=ExtResource("4_oj63r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3)

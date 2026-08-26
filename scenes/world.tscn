@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bnoprbnjis02t"]
 
-[ext_resource type="Script" uid="uid://bi4vr1kuvjft0" path="res://scripts/character_body_3d.gd" id="1_nnsk1"]
 [ext_resource type="Script" uid="uid://uyyc36h6m1x6" path="res://scripts/world.gd" id="1_rwgxs"]
+[ext_resource type="PackedScene" uid="uid://er45mo73ra8h" path="res://scenes/snake.tscn" id="2_4wyf3"]
 [ext_resource type="PackedScene" uid="uid://doq54mt4t5hrs" path="res://scenes/food.tscn" id="3_4wyf3"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_gv5m4"]
@@ -16,13 +16,6 @@ background_mode = 2
 sky = SubResource("Sky_f3sb7")
 glow_enabled = true
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_f3sb7"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fdyoq"]
-albedo_color = Color(0.6, 0.76862746, 0.003921569, 1)
-
-[sub_resource type="SphereMesh" id="SphereMesh_id1th"]
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f3sb7"]
 albedo_color = Color(1, 0.6858363, 0.27410984, 1)
 
@@ -32,32 +25,11 @@ size = Vector2(20, 20)
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_f3sb7"]
 points = PackedVector3Array(-10, 0, -10, -10, 0, 10, 10, 0, -10, 10, 0, 10)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nnsk1"]
-albedo_color = Color(0.6, 0.76862746, 0.003921569, 1)
-
-[sub_resource type="CylinderMesh" id="CylinderMesh_rwgxs"]
-top_radius = 0.40625
-bottom_radius = 0.40625
-height = 1.0
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4wyf3"]
-albedo_color = Color(0.6, 0.76862746, 0.003921569, 1)
-
-[sub_resource type="CylinderMesh" id="CylinderMesh_k0juu"]
-top_radius = 0.40625
-bottom_radius = 0.241
-height = 1.0
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_71j4m"]
-albedo_color = Color(0.6, 0.76862746, 0.003921569, 1)
-
-[sub_resource type="CylinderMesh" id="CylinderMesh_qfnet"]
-top_radius = 0.241
-bottom_radius = 0.086
-height = 1.0
-
 [node name="world" type="Node3D" unique_id=1135419818]
 script = ExtResource("1_rwgxs")
+
+[node name="Snake" parent="." unique_id=1893879316 instance=ExtResource("2_4wyf3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1696231, 0)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1267928498]
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
@@ -65,26 +37,6 @@ shadow_enabled = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1219871403]
 environment = SubResource("Environment_fj7yv")
-
-[node name="Snake" type="CharacterBody3D" parent="." unique_id=503479305]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, -3)
-script = ExtResource("1_nnsk1")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Snake" unique_id=2004022448]
-transform = Transform3D(1.9106855e-15, 4.371139e-08, -1, 1, -4.371139e-08, 0, -4.371139e-08, -1, -4.371139e-08, 3.5544183e-08, 0, -0.4533913)
-shape = SubResource("SphereShape3D_f3sb7")
-
-[node name="egg" type="MeshInstance3D" parent="Snake" unique_id=1826112817]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, -0.4545102)
-material_override = SubResource("StandardMaterial3D_fdyoq")
-mesh = SubResource("SphereMesh_id1th")
-
-[node name="Head" type="Node3D" parent="Snake" unique_id=13600881]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 3)
-
-[node name="Camera3D" type="Camera3D" parent="Snake/Head" unique_id=2082294995]
-transform = Transform3D(1, -8.881783e-15, -5.960465e-08, 5.3290697e-15, 0.99999994, 1.589326e-08, 5.960466e-08, -1.589326e-08, 0.99999994, 0, 0, 0)
-fov = 100.0
 
 [node name="Ground" type="StaticBody3D" parent="." unique_id=358615372]
 
@@ -98,33 +50,6 @@ shape = SubResource("ConvexPolygonShape3D_f3sb7")
 [node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=2027671351]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 1, 0)
 use_collision = true
-
-[node name="Node3D" type="Node3D" parent="." unique_id=741880445]
-
-[node name="Tail" type="MeshInstance3D" parent="Node3D" unique_id=328722955]
-transform = Transform3D(4.37114e-08, -7.54979e-08, -1, 1, 7.54979e-08, 4.3711392e-08, 7.54979e-08, -1, 7.54979e-08, 0, 1.5645965, -1.6136328)
-material_override = SubResource("StandardMaterial3D_nnsk1")
-mesh = SubResource("CylinderMesh_rwgxs")
-
-[node name="Tail2" type="MeshInstance3D" parent="Node3D" unique_id=232123367]
-transform = Transform3D(4.37114e-08, -7.54979e-08, -1, 1, 7.54979e-08, 4.3711392e-08, 7.54979e-08, -1, 7.54979e-08, 0, 1.5780399, -0.6124565)
-material_override = SubResource("StandardMaterial3D_nnsk1")
-mesh = SubResource("CylinderMesh_rwgxs")
-
-[node name="Tail3" type="MeshInstance3D" parent="Node3D" unique_id=860928727]
-transform = Transform3D(4.37114e-08, -7.54979e-08, -1, 1, 7.54979e-08, 4.3711392e-08, 7.54979e-08, -1, 7.54979e-08, -0.009947777, 1.5926474, 0.37147957)
-material_override = SubResource("StandardMaterial3D_nnsk1")
-mesh = SubResource("CylinderMesh_rwgxs")
-
-[node name="Tail4" type="MeshInstance3D" parent="Node3D" unique_id=416812154]
-transform = Transform3D(4.6098936e-08, -0.031918958, -0.99949044, 1, 7.54979e-08, 4.3711392e-08, 7.406422e-08, -0.99949044, 0.031918958, 0, 2.1924145, 0)
-material_override = SubResource("StandardMaterial3D_4wyf3")
-mesh = SubResource("CylinderMesh_k0juu")
-
-[node name="Tail5" type="MeshInstance3D" parent="Node3D" unique_id=1911772862]
-transform = Transform3D(4.37114e-08, -7.54979e-08, -1, 1, 7.54979e-08, 4.3711392e-08, 7.54979e-08, -1, 7.54979e-08, 0, 0, 0)
-material_override = SubResource("StandardMaterial3D_71j4m")
-mesh = SubResource("CylinderMesh_qfnet")
 
 [node name="food" parent="." unique_id=1382616051 instance=ExtResource("3_4wyf3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.0963771, 0, 3.5362659)

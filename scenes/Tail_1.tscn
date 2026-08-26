@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://o1db2wnw0n0d"]
 
-[ext_resource type="Script" uid="uid://bhtsjm3kgp33d" path="res://scripts/tail.gd" id="1_vj0ha"]
+[ext_resource type="Script" uid="uid://bhtsjm3kgp33d" path="res://scripts/tail.gd" id="1_jybvx"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bgygj"]
 albedo_color = Color(0.6, 0.76862746, 0.003921569, 1)
@@ -10,18 +10,10 @@ top_radius = 0.40625
 bottom_radius = 0.40625
 height = 1.0
 
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_vj0ha"]
-height = 0.375
-radius = 0.40625
-
-[node name="Tail" type="CharacterBody3D" unique_id=1969613569]
-script = ExtResource("1_vj0ha")
+[node name="Tail" type="Node3D" unique_id=707078844]
+script = ExtResource("1_jybvx")
 
 [node name="Tail" type="MeshInstance3D" parent="." unique_id=1597673563]
 transform = Transform3D(4.37114e-08, -7.54979e-08, -1, 1, 7.54979e-08, 4.3711392e-08, 7.54979e-08, -1, 7.54979e-08, 0, 0, 0)
 material_override = SubResource("StandardMaterial3D_bgygj")
 mesh = SubResource("CylinderMesh_vj0ha")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=47340207]
-transform = Transform3D(4.37114e-08, -7.54979e-08, -1, 1, 7.54979e-08, 4.3711392e-08, 7.54979e-08, -1, 7.54979e-08, 0, 0, 0)
-shape = SubResource("CylinderShape3D_vj0ha")
