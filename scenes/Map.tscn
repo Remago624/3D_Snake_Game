@@ -1,16 +1,27 @@
 [gd_scene format=3 uid="uid://c0iapfraak7rf"]
 
 [ext_resource type="Texture2D" uid="uid://dr0mc2lv6dm2o" path="res://forrest_ground_01_diff_2k.jpg" id="1_lajc7"]
+[ext_resource type="PackedScene" uid="uid://er45mo73ra8h" path="res://scenes/snake.tscn" id="2_lajc7"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cv6p3"]
-albedo_color = Color(0.28310725, 0.6874496, 0, 1)
 albedo_texture = ExtResource("1_lajc7")
+uv1_scale = Vector3(4, 4, 4)
 
 [sub_resource type="BoxMesh" id="BoxMesh_txh2y"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_txh2y"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_lajc7"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_cv6p3"]
+[sub_resource type="BoxMesh" id="BoxMesh_xkm8s"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xkm8s"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_tm3qm"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_tm3qm"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yyirk"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_41ykk"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_o8a80"]
 
@@ -30,48 +41,59 @@ transform = Transform3D(50, 0, 0, 0, 1, 0, 0, 0, 50, 0, 0, 0)
 material_override = SubResource("StandardMaterial3D_cv6p3")
 mesh = SubResource("BoxMesh_txh2y")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaGroundticBody3D" unique_id=1896193189]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaGroundticBody3D" unique_id=1356727222]
 transform = Transform3D(50, 0, 0, 0, 1, 0, 0, 0, 50, 0, 0, 0)
-shape = SubResource("BoxShape3D_txh2y")
+shape = SubResource("BoxShape3D_lajc7")
 
 [node name="wall" type="StaticBody3D" parent="." unique_id=965279650]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="wall" unique_id=1208031423]
 transform = Transform3D(50, 0, 0, 0, 3, 0, 0, 0, 1, 0, 1.5, 23)
+visible = false
+mesh = SubResource("BoxMesh_xkm8s")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="wall" unique_id=512556708]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="wall" unique_id=1926327199]
 transform = Transform3D(50, 0, 0, 0, 3, 0, 0, 0, 1, 0, 1.5, 23)
-shape = SubResource("BoxShape3D_cv6p3")
+shape = SubResource("BoxShape3D_xkm8s")
 
 [node name="wall2" type="StaticBody3D" parent="." unique_id=759678514]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="wall2" unique_id=147979816]
 transform = Transform3D(50, 0, 0, 0, 3, 0, 0, 0, 1, 0, 1.5, -23.009743)
+visible = false
+mesh = SubResource("BoxMesh_tm3qm")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="wall2" unique_id=2138873741]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="wall2" unique_id=1169989276]
 transform = Transform3D(50, 0, 0, 0, 3, 0, 0, 0, 1, 0, 1.5, -23.009743)
-shape = SubResource("BoxShape3D_cv6p3")
+shape = SubResource("BoxShape3D_tm3qm")
 
 [node name="wall3" type="StaticBody3D" parent="." unique_id=1624908504]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="wall3" unique_id=1801356484]
 transform = Transform3D(0.04722485, 0, -0.9999995, 0, 3, 0, 49.999977, 0, 0.00094449706, 22.565763, 1.5, 0.20659351)
+visible = false
+mesh = SubResource("BoxMesh_tm3qm")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="wall3" unique_id=906851428]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="wall3" unique_id=546305931]
 transform = Transform3D(0.04722485, 0, -0.9999995, 0, 3, 0, 49.999977, 0, 0.00094449706, 22.565763, 1.5, 0.20659351)
-shape = SubResource("BoxShape3D_cv6p3")
+shape = SubResource("BoxShape3D_yyirk")
 
 [node name="wall4" type="StaticBody3D" parent="." unique_id=71703923]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="wall4" unique_id=1290315784]
 transform = Transform3D(0.04722485, 0, -0.9999995, 0, 3, 0, 49.999977, 0, 0.00094449706, -22.631952, 1.5, 0.20659351)
+visible = false
+mesh = SubResource("BoxMesh_tm3qm")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="wall4" unique_id=1128185880]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="wall4" unique_id=21793736]
 transform = Transform3D(0.04722485, 0, -0.9999995, 0, 3, 0, 49.999977, 0, 0.00094449706, -22.631952, 1.5, 0.20659351)
-shape = SubResource("BoxShape3D_cv6p3")
+shape = SubResource("BoxShape3D_41ykk")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1795247437]
 transform = Transform3D(1, 0, 0, 0, 0.22495104, 0.97437006, 0, -0.97437006, 0.22495104, 5.336673, 32.679222, 18.920227)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1821966157]
 environment = SubResource("Environment_txh2y")
+
+[node name="Snake" parent="." unique_id=1893879316 instance=ExtResource("2_lajc7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.6, 0.90000004, 2.9)
