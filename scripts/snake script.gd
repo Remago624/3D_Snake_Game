@@ -105,7 +105,7 @@ func _update_tails(delta):
 func grow():
 	print("grow is active")
 	var new_tail = tail_scene.instantiate()
-	var last = tails[0] if tails.size() > 0 else self
+	var last = tails[-1] if tails.size() > 0 else self
 	tails_parent.add_child(new_tail)
 	
 	var direction = last.global_position - global_position
@@ -115,5 +115,5 @@ func grow():
 	direction = direction.normalized()
 	new_tail.global_position = last.global_position + direction * segment_distance
 	new_tail.rotation = Vector3.ZERO
-	tails.append(new_tail)
+	tails.push_front(new_tail)
 	
