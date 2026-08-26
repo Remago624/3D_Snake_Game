@@ -39,7 +39,7 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("cancel"):
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	
-	rotation.y = lerp_angle(rotation.y, target_y, delta * turn_smooth)
+	#rotation.y = lerp_angle(rotation.y, target_y, delta * turn_smooth)
 	head.rotation.y = target_y - rotation.y
 
 
@@ -85,11 +85,18 @@ func _update_tails(delta):
 			continue
 		var target_position = postion_history[history_index]
 		tail.global_position = tail.global_position.lerp(target_position, delta * follow_smooth)
-		var look_diriction = target_position - tail.global_position
+		var look_index = maxi(history_index -1, 0)
+		var look_target = postion_history[look_index]
 		
-		if look_diriction.length() > 0.01:
-			var target_angle = atan2(look_diriction.x, look_diriction.z)
-			tail.rotation.y = lerp_angle(tail.rotation.y, target_angle, delta * 2.0)
+		if tail.global_position.distance_to(look_target) > 0.0000000001:
+			tail.look_at(look_target, Vector3.UP)
+			tail.rotation.x = 0
+			tail.rotation.z = 0
+		
+		#var look_diriction = target_position - tail.global_position
+		#if look_diriction.length() > 0.01:   ده الكود الغبي القديم الي في واحد مش عارف اسمه ايه كان عامله
+			#var target_angle = atan2(look_diriction.x, look_diriction.z)
+			#tail.rotation.y = lerp_angle(tail.rotation.y, target_angle, delta * 2.0)
 
 
 func grow():
