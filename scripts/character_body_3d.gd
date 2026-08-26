@@ -79,3 +79,14 @@ func _update_tails():
 		tail.look_at(leader.global_position, Vector3.UP)
 		tail.rotation.x = deg_to_rad(-90)
 		tail.rotation.z = 0
+
+var tail_scene = preload("res://scenes/Tail.tscn")
+
+func grow():
+	print("grow is active")
+	var new_tail = tail_scene.instantiate()
+	var last = tails[-1] if tails.size() > 0 else self
+	tails_parent.add_child(new_tail)
+	new_tail.global_position = last.global_position
+	
+	tails.append(new_tail)

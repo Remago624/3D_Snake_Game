@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://doq54mt4t5hrs"]
+
+[ext_resource type="Script" uid="uid://dty5477d4dvdm" path="res://scripts/food.gd" id="1_xven1"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8txok"]
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_txh2y"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_txh2y"]
+
+[node name="food" type="Node3D" unique_id=1382616051]
+script = ExtResource("1_xven1")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1095276152]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.010302305, 1.2144687, 0)
+material_override = SubResource("StandardMaterial3D_8txok")
+mesh = SubResource("BoxMesh_txh2y")
+
+[node name="area" type="Area3D" parent="." unique_id=603724927]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="area" unique_id=1110150122]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2362877, 0)
+shape = SubResource("BoxShape3D_txh2y")

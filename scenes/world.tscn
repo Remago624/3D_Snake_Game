@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://bnoprbnjis02t"]
 
-[ext_resource type="Script" uid="uid://bi4vr1kuvjft0" path="res://character_body_3d.gd" id="1_nnsk1"]
+[ext_resource type="Script" uid="uid://bi4vr1kuvjft0" path="res://scripts/character_body_3d.gd" id="1_nnsk1"]
+[ext_resource type="Script" uid="uid://uyyc36h6m1x6" path="res://scripts/world.gd" id="1_rwgxs"]
+[ext_resource type="PackedScene" uid="uid://doq54mt4t5hrs" path="res://scenes/food.tscn" id="3_4wyf3"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_gv5m4"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -55,6 +57,7 @@ bottom_radius = 0.086
 height = 1.0
 
 [node name="world" type="Node3D" unique_id=1135419818]
+script = ExtResource("1_rwgxs")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1267928498]
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
@@ -99,22 +102,22 @@ use_collision = true
 [node name="Node3D" type="Node3D" parent="." unique_id=741880445]
 
 [node name="Tail" type="MeshInstance3D" parent="Node3D" unique_id=328722955]
-transform = Transform3D(4.37114e-08, -7.54979e-08, -1, 1, 7.54979e-08, 4.3711392e-08, 7.54979e-08, -1, 7.54979e-08, 0, 0, 0)
+transform = Transform3D(4.37114e-08, -7.54979e-08, -1, 1, 7.54979e-08, 4.3711392e-08, 7.54979e-08, -1, 7.54979e-08, 0, 1.5645965, -1.6136328)
 material_override = SubResource("StandardMaterial3D_nnsk1")
 mesh = SubResource("CylinderMesh_rwgxs")
 
 [node name="Tail2" type="MeshInstance3D" parent="Node3D" unique_id=232123367]
-transform = Transform3D(4.37114e-08, -7.54979e-08, -1, 1, 7.54979e-08, 4.3711392e-08, 7.54979e-08, -1, 7.54979e-08, 0, 0, 0)
+transform = Transform3D(4.37114e-08, -7.54979e-08, -1, 1, 7.54979e-08, 4.3711392e-08, 7.54979e-08, -1, 7.54979e-08, 0, 1.5780399, -0.6124565)
 material_override = SubResource("StandardMaterial3D_nnsk1")
 mesh = SubResource("CylinderMesh_rwgxs")
 
 [node name="Tail3" type="MeshInstance3D" parent="Node3D" unique_id=860928727]
-transform = Transform3D(4.37114e-08, -7.54979e-08, -1, 1, 7.54979e-08, 4.3711392e-08, 7.54979e-08, -1, 7.54979e-08, 0, 0, 0)
+transform = Transform3D(4.37114e-08, -7.54979e-08, -1, 1, 7.54979e-08, 4.3711392e-08, 7.54979e-08, -1, 7.54979e-08, -0.009947777, 1.5926474, 0.37147957)
 material_override = SubResource("StandardMaterial3D_nnsk1")
 mesh = SubResource("CylinderMesh_rwgxs")
 
 [node name="Tail4" type="MeshInstance3D" parent="Node3D" unique_id=416812154]
-transform = Transform3D(4.37114e-08, -7.54979e-08, -1, 1, 7.54979e-08, 4.3711392e-08, 7.54979e-08, -1, 7.54979e-08, 0, 0, 0)
+transform = Transform3D(4.6098936e-08, -0.031918958, -0.99949044, 1, 7.54979e-08, 4.3711392e-08, 7.406422e-08, -0.99949044, 0.031918958, 0, 2.1924145, 0)
 material_override = SubResource("StandardMaterial3D_4wyf3")
 mesh = SubResource("CylinderMesh_k0juu")
 
@@ -122,3 +125,18 @@ mesh = SubResource("CylinderMesh_k0juu")
 transform = Transform3D(4.37114e-08, -7.54979e-08, -1, 1, 7.54979e-08, 4.3711392e-08, 7.54979e-08, -1, 7.54979e-08, 0, 0, 0)
 material_override = SubResource("StandardMaterial3D_71j4m")
 mesh = SubResource("CylinderMesh_qfnet")
+
+[node name="food" parent="." unique_id=1382616051 instance=ExtResource("3_4wyf3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.0963771, 0, 3.5362659)
+
+[node name="food2" parent="." unique_id=11613756 instance=ExtResource("3_4wyf3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5791965, 0, -2.4869275)
+
+[node name="food3" parent="." unique_id=1936927422 instance=ExtResource("3_4wyf3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.9609141, 0, 5.083385)
+
+[node name="food4" parent="." unique_id=1839734245 instance=ExtResource("3_4wyf3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.0870812, 0, 0.32438672)
+
+[node name="food5" parent="." unique_id=1497067370 instance=ExtResource("3_4wyf3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.49133396, 0, -5.628532)
