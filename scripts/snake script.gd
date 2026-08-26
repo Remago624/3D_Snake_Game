@@ -30,6 +30,8 @@ func _ready() -> void:
 	postion_history.append(global_position)
 
 func _input(event):
+	if event is InputEventMouseButton:
+		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	if event is InputEventMouseMotion:
 		target_y += deg_to_rad(-event.relative.x * mouse_sense)
 		camera.rotate_x(deg_to_rad(-event.relative.y * mouse_sense))
@@ -103,7 +105,7 @@ func _update_tails(delta):
 func grow():
 	print("grow is active")
 	var new_tail = tail_scene.instantiate()
-	var last = tails[-1] if tails.size() > 0 else self
+	var last = tails[0] if tails.size() > 0 else self
 	tails_parent.add_child(new_tail)
 	
 	var direction = last.global_position - global_position
@@ -114,3 +116,4 @@ func grow():
 	new_tail.global_position = last.global_position + direction * segment_distance
 	new_tail.rotation = Vector3.ZERO
 	tails.append(new_tail)
+	
