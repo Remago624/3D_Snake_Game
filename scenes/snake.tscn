@@ -21,7 +21,7 @@ script = ExtResource("1_l4b1q")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Head" unique_id=263847941]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 7)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5999999, 4.1)
 current = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Head" unique_id=1012442718]
