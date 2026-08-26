@@ -95,7 +95,7 @@ func _update_tails(delta):
 			tail.rotation.z = 0
 		
 		#var look_diriction = target_position - tail.global_position
-		#if look_diriction.length() > 0.01:   ده الكود الغبي القديم الي في واحد مش عارف اسمه ايه كان عامله
+		#if look_diriction.length() > 0.01:  
 			#var target_angle = atan2(look_diriction.x, look_diriction.z)
 			#tail.rotation.y = lerp_angle(tail.rotation.y, target_angle, delta * 2.0)
 
