@@ -13,7 +13,7 @@ const turn_smooth = 5.0
 
 var tails: Array[Node3D] = []
 const segment_distance = 0.5
-const follow_smooth = 15.0
+const follow_smooth = 60.0
 
 var postion_history = []
 const history_spacing = 0.05
@@ -81,11 +81,12 @@ func _update_tails(delta):
 		var history_index = int((i + 1) * segment_distance / history_spacing)
 		if history_index >= postion_history.size():
 			history_index = postion_history.size() - 1
+			print("bugdfs")
 		if history_index < 0:
 			continue
 		var target_position = postion_history[history_index]
 		tail.global_position = tail.global_position.lerp(target_position, delta * follow_smooth)
-		var look_index = maxi(history_index -1, 0)
+		var look_index = maxi(history_index -5, 0)
 		var look_target = postion_history[look_index]
 		
 		if tail.global_position.distance_to(look_target) > 0.0000000001:
