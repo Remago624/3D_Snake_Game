@@ -226,6 +226,9 @@ autostart = true
 
 [node name="food" parent="." unique_id=1382616051 instance=ExtResource("7_inly4")]
 
+[node name="kdkfd" type="Node3D" parent="." unique_id=1021417369]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.8, 0, -9.6)
+
 [connection signal="timeout" from="spawn_timer" to="." method="_on_spawn_timer_timeout"]
 [connection signal="eaten" from="food" to="Snake" method="grow"]
 
