@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://dqntkxdlp0rnm"
-path="res://.godot/imported/AmaticSC-Bold.ttf-051364000d1906ae4e53a748ca60f3a8.fontdata"
+path="res://.godot/imported/AmaticSC-Bold.ttf-86190c5b90cc72fcc23e7e9e5f738ee4.fontdata"
 
 [deps]
 
-source_file="res://AmaticSC-Bold.ttf"
-dest_files=["res://.godot/imported/AmaticSC-Bold.ttf-051364000d1906ae4e53a748ca60f3a8.fontdata"]
+source_file="res://font/AmaticSC-Bold.ttf"
+dest_files=["res://.godot/imported/AmaticSC-Bold.ttf-86190c5b90cc72fcc23e7e9e5f738ee4.fontdata"]
 
 [params]
 

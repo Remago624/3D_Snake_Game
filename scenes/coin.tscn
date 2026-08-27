@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://dmj1we3vhws3f"]
+
+[ext_resource type="Script" uid="uid://c6l23oagylqks" path="res://scripts/coin.gd" id="1_rwqht"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_txh2y"]
+top_radius = 0.3
+bottom_radius = 0.3
+height = 0.15
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_txh2y"]
+height = 0.15
+radius = 0.3
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_11l1o"]
+albedo_color = Color(0.8, 0.6666667, 0.20784314, 1)
+emission_enabled = true
+emission = Color(0.81857294, 0.68283165, 0.216946, 1)
+emission_energy_multiplier = 1.5
+
+[sub_resource type="Curve" id="Curve_rwqht"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.75, 0.82022476), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_i64fm"]
+curve = SubResource("Curve_rwqht")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_o8a80"]
+use_rotation_3d = true
+rotation_3d_min = Vector3(0, 0, 0)
+rotation_3d_max = Vector3(180, 180, 180)
+spread = 130.0
+initial_velocity_min = 2.0
+initial_velocity_max = 3.0
+gravity = Vector3(0, -5, 0)
+scale_min = 0.5
+scale_max = 0.9
+scale_curve = SubResource("CurveTexture_i64fm")
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_rwqht"]
+top_radius = 0.1
+bottom_radius = 0.1
+height = 0.1
+radial_segments = 16
+rings = 2
+
+[node name="coin" type="Node3D" unique_id=2131438842]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+script = ExtResource("1_rwqht")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=420629735]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("CylinderMesh_txh2y")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=1420341126]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1261102058]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("CylinderShape3D_txh2y")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="." unique_id=388853641]
+material_override = SubResource("StandardMaterial3D_11l1o")
+emitting = false
+amount = 20
+lifetime = 0.5
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_o8a80")
+draw_pass_1 = SubResource("CylinderMesh_rwqht")

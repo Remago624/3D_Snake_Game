@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dceumioln5fcn"]
 
-[ext_resource type="FontFile" uid="uid://dqntkxdlp0rnm" path="res://AmaticSC-Bold.ttf" id="1_5mbse"]
+[ext_resource type="FontFile" uid="uid://dqntkxdlp0rnm" path="res://font/AmaticSC-Bold.ttf" id="1_5mbse"]
 
 [sub_resource type="FontFile" id="FontFile_txh2y"]
 cache/0/variation_coordinates = {}
