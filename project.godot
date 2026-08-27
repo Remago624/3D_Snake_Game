@@ -35,7 +35,7 @@ Shortcuts/density_decrement=Object(Shortcut,"resource_local_to_scene":false,"res
 [application]
 
 config/name="3D_Snake_Game"
-run/main_scene="uid://bnoprbnjis02t"
+run/main_scene="uid://c0iapfraak7rf"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 

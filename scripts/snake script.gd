@@ -116,4 +116,21 @@ func grow():
 	new_tail.global_position = last.global_position + direction * segment_distance
 	new_tail.rotation = Vector3.ZERO
 	tails.push_front(new_tail)
-	
+	new_tail.get_node("tesh").emitting = true
+
+
+#func _on_food_eaten() -> void:
+	#print("grow is active")
+	#var new_tail = tail_scene.instantiate()
+	#var last = tails[-1] if tails.size() > 0 else self
+	#tails_parent.add_child(new_tail)
+	#
+	#var direction = last.global_position - global_position
+	#if direction.length() < 0.01:
+		#direction = Vector3(0, 0, 1)
+	#
+	#direction = direction.normalized()
+	#new_tail.global_position = last.global_position + direction * segment_distance
+	#new_tail.rotation = Vector3.ZERO
+	#tails.push_front(new_tail)
+	#new_tail.get_node("tesh").emitting = true

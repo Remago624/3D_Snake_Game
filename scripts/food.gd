@@ -17,4 +17,4 @@ func _on_body_entered(body):
 func _process(delta):
 	time += delta
 	rotate_y(delta * 2)
-	position.y = -0.5 + sin(time * 3.0) * 0.1
+	position.y = 0 + sin(time * 3.0) * 0.1

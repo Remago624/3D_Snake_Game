@@ -10,6 +10,33 @@ top_radius = 0.40625
 bottom_radius = 0.40625
 height = 1.0
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qvq6i"]
+albedo_color = Color(0.051267087, 1, 0.0007327199, 1)
+emission_enabled = true
+emission = Color(0.7764706, 1, 0.16078432, 1)
+
+[sub_resource type="Curve" id="Curve_jybvx"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.8743719, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_jybvx"]
+curve = SubResource("Curve_jybvx")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_xoqtj"]
+use_rotation_3d = true
+rotation_3d_min = Vector3(0, 0, 0)
+rotation_3d_max = Vector3(180, 180, 180)
+spread = 180.0
+initial_velocity_min = 3.0
+initial_velocity_max = 5.0
+gravity = Vector3(0, -6.7, 0)
+scale_min = 0.35
+scale_max = 0.66999996
+scale_curve = SubResource("CurveTexture_jybvx")
+
+[sub_resource type="BoxMesh" id="BoxMesh_id1th"]
+size = Vector3(0.1, 0.1, 0.1)
+
 [node name="Tail" type="Node3D" unique_id=707078844]
 script = ExtResource("1_jybvx")
 
@@ -17,3 +44,14 @@ script = ExtResource("1_jybvx")
 transform = Transform3D(4.37114e-08, -7.54979e-08, -1, 1, 7.54979e-08, 4.3711392e-08, 7.54979e-08, -1, 7.54979e-08, 0, 0, 0)
 material_override = SubResource("StandardMaterial3D_bgygj")
 mesh = SubResource("CylinderMesh_vj0ha")
+
+[node name="tesh" type="GPUParticles3D" parent="." unique_id=535757423]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.2351742e-08, -0.7)
+material_override = SubResource("StandardMaterial3D_qvq6i")
+emitting = false
+amount = 50
+one_shot = true
+explosiveness = 1.0
+fixed_fps = 144
+process_material = SubResource("ParticleProcessMaterial_xoqtj")
+draw_pass_1 = SubResource("BoxMesh_id1th")
