@@ -22,14 +22,14 @@ I always wanted to make games with my friends as a team, so making this game, we
 
 ### screenshots 
 main menu
-![alt text](image.png)
+![main menu](image.png)
 
 game play 
-![alt text](image-1.png) 
-![alt text](image-2.png)
+![snake ](image-1.png) 
+![coins and apples ](image-2.png)
 
 death screen 
-![alt text](image-3.png)
+![skill issue](image-3.png)
 
 ### Things we would love to implement 
 
