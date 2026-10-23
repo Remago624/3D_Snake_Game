@@ -46,6 +46,7 @@ Gamemaneger="*uid://l5l0c1q1ovfj"
 
 [display]
 
+window/size/mode=3
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 
