@@ -49,7 +49,7 @@ visit the itch.io link
 ### Running from source 
 
 know a lot about godot and want to change some stuff a bit then run your own snake 3d from the source 
-you can do taht by clooning the repo (the link form the top of your browser ) or using this link (https://github.com/Remago624/3D_Snake_Game)
+you can do that by cloning the repo (the link form the top of your browser ) or using this link (https://github.com/Remago624/3D_Snake_Game)
 
 ### System Requirements
 
