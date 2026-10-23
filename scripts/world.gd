@@ -7,6 +7,7 @@ extends Node3D
 @onready var snake = $Snake
 
 func _ready() -> void:
+	$HUD/ColorRect.visible = false
 	randomize()
 
 func _on_spawn_timer_timeout() -> void:
@@ -26,3 +27,16 @@ func _on_spawn_money_timer_timeout() -> void:
 	var money_instance = money.instantiate()
 	money_instance.position = money_spawn_point + Vector3(randf_range(-spawn_radius, spawn_radius), 0, randf_range(-spawn_radius, spawn_radius))
 	add_child(money_instance)
+
+
+func _on_button_pressed() -> void:
+	get_tree().reload_current_scene()
+	Gamemaneger.money = 0
+	Gamemaneger.score = 0
+	snake.process_mode = Node.PROCESS_MODE_INHERIT
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+
+
+func _on_button_2_pressed() -> void:
+	snake.process_mode = Node.PROCESS_MODE_INHERIT
+	get_tree().change_scene_to_file("res://scenes/mainmenu.tscn")

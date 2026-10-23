@@ -2,6 +2,8 @@
 
 [ext_resource type="FontFile" uid="uid://dqntkxdlp0rnm" path="res://font/AmaticSC-Bold.ttf" id="1_5mbse"]
 [ext_resource type="Texture2D" uid="uid://dhduvnr7ctejh" path="res://assets/origbig.png" id="1_natt5"]
+[ext_resource type="Script" uid="uid://caxp435gd83r1" path="res://scripts/mainmenu.gd" id="1_r3g3c"]
+[ext_resource type="AudioStream" uid="uid://civ3xiwumemnf" path="res://assets/Serenity.mp3" id="4_3vvtq"]
 
 [sub_resource type="FontFile" id="FontFile_txh2y"]
 cache/0/variation_coordinates = {}
@@ -272,6 +274,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_r3g3c")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=2124907386]
 position = Vector2(579.5, 322.5)
@@ -326,6 +329,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_5mbse")
 text = "Play"
 
 [node name="StyleButton" type="Button" parent="menu buttons" unique_id=2068892799]
+visible = false
 layout_mode = 2
 theme_override_fonts/font = SubResource("FontFile_o8a80")
 theme_override_font_sizes/font_size = 32
@@ -335,6 +339,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_85riq")
 text = "Style"
 
 [node name="Optionsbutton" type="Button" parent="menu buttons" unique_id=1505864790]
+visible = false
 layout_mode = 2
 theme_override_fonts/font = SubResource("FontFile_cv6p3")
 theme_override_font_sizes/font_size = 32
@@ -351,3 +356,10 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_wf3n4")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_h73c4")
 theme_override_styles/hover = SubResource("StyleBoxFlat_8spsg")
 text = "Quit"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1439444303]
+stream = ExtResource("4_3vvtq")
+autoplay = true
+
+[connection signal="pressed" from="menu buttons/playButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="menu buttons/quitButton" to="." method="_on_quit_button_pressed"]

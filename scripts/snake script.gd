@@ -139,9 +139,9 @@ func grow():
 
 func _on_area_3d_area_entered(area: Area3D) -> void:
 	if area == $Tails/Tail3/Area3D or area == $Tails/Tail2/Area3D or area == $Tails/Tail/Area3D:
-		get_tree().reload_current_scene()
-		Gamemaneger.money = 0
-		Gamemaneger.score = 0
+		$"../HUD/ColorRect".visible = true
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		$".".process_mode = Node.PROCESS_MODE_DISABLED
 
 
 func _on_timer_timeout() -> void:
