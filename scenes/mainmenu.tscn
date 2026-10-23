@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dceumioln5fcn"]
 
 [ext_resource type="FontFile" uid="uid://dqntkxdlp0rnm" path="res://font/AmaticSC-Bold.ttf" id="1_5mbse"]
+[ext_resource type="Texture2D" uid="uid://dhduvnr7ctejh" path="res://assets/origbig.png" id="1_natt5"]
 
 [sub_resource type="FontFile" id="FontFile_txh2y"]
 cache/0/variation_coordinates = {}
@@ -271,6 +272,11 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2124907386]
+position = Vector2(579.5, 322.5)
+scale = Vector2(0.50130206, 0.48996913)
+texture = ExtResource("1_natt5")
 
 [node name="background" type="ColorRect" parent="." unique_id=773622568]
 layout_mode = 1

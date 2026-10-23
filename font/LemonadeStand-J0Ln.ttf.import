@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://de22vyeo0iqjq"
-path="res://.godot/imported/LemonadeStand-J0Ln.ttf-07dfae58e9a6634a49b558aaf1a538cc.fontdata"
+path="res://.godot/imported/LemonadeStand-J0Ln.ttf-93f98fe12636e828a3c568857452371d.fontdata"
 
 [deps]
 
-source_file="res://LemonadeStand-J0Ln.ttf"
-dest_files=["res://.godot/imported/LemonadeStand-J0Ln.ttf-07dfae58e9a6634a49b558aaf1a538cc.fontdata"]
+source_file="res://font/LemonadeStand-J0Ln.ttf"
+dest_files=["res://.godot/imported/LemonadeStand-J0Ln.ttf-93f98fe12636e828a3c568857452371d.fontdata"]
 
 [params]
 

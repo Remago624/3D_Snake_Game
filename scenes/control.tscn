@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://d3pecdotfrtlw"]
 
-[ext_resource type="FontFile" uid="uid://de22vyeo0iqjq" path="res://LemonadeStand-J0Ln.ttf" id="1_0fbet"]
+[ext_resource type="FontFile" uid="uid://de22vyeo0iqjq" path="res://font/LemonadeStand-J0Ln.ttf" id="1_0fbet"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0fbet"]
 content_margin_left = 4.0
