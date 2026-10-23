@@ -49,14 +49,14 @@ func _physics_process(delta: float) -> void:
 		velocity += get_gravity() * delta
 
 	var input_dir := Input.get_vector("left", "right", "forward", "backward")
-	var direction: Vector3 = (head.global_transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+	var direction: Vector3 = (head.global_transform.basis * Vector3(0,0,-1)).normalized()
 	if is_on_floor():
-		if direction:
+		#if direction:
 			velocity.x = direction.x * speed
 			velocity.z = direction.z * speed
-		else:
-			velocity.x = lerp(velocity.x, 0.0, delta * 3.0)
-			velocity.z = lerp(velocity.z, 0.0, delta * 3.0)
+		#else:
+			#velocity.x = lerp(velocity.x, 0.0, delta * 3.0)
+			#velocity.z = lerp(velocity.z, 0.0, delta * 3.0)
 	else:
 		velocity.x = lerp(velocity.x, direction.x * speed, delta * 0.6)
 		velocity.z = lerp(velocity.z, direction.z * speed, delta * 0.6)

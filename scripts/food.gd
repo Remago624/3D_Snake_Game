@@ -18,4 +18,4 @@ func _on_body_entered(body): #emiting a signal
 func _process(delta): #making it spin (around the world around the world)
 	time += delta
 	rotate_y(delta * 2)
-	position.y = 0 + sin(time * 3.0) * 0.1
+	position.y = 1 + sin(time * 3.0) * 0.1
