@@ -62,13 +62,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.6, 1.3000001, 2.9)
 [node name="SimpleGrassTextured2" type="MultiMeshInstance3D" parent="." unique_id=94491446]
 material_override = SubResource("ShaderMaterial_46d0c")
 multimesh = SubResource("MultiMesh_inly4")
-metadata/_custom_type_script = "uid://2juaclm8gc1n"
 metadata/SimpleGrassTextured = "2.0.5"
 
 [node name="SimpleGrassTextured" type="MultiMeshInstance3D" parent="." unique_id=1200325987]
 material_override = SubResource("ShaderMaterial_d46yu")
 multimesh = SubResource("MultiMesh_41ykk")
-metadata/_custom_type_script = "uid://2juaclm8gc1n"
 metadata/SimpleGrassTextured = "2.0.5"
 
 [node name="StaGroundticBody3D" type="StaticBody3D" parent="." unique_id=584323357]
