@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dty5477d4dvdm" path="res://scripts/food.gd" id="1_xven1"]
 [ext_resource type="PackedScene" uid="uid://ceepq43tfw6y1" path="res://assets/El tofa7ah/scene.gltf" id="2_af40f"]
+[ext_resource type="AudioStream" uid="uid://b7no6rgynnu5y" path="res://assets/freesound_community-eating-sound-effect-36186.mp3" id="3_370ap"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_txh2y"]
 
@@ -16,3 +17,6 @@ transform = Transform3D(9, 0, 0, 0, 9, 0, 0, 0, 9, 0, -0.22508109, 0)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="area" unique_id=1110150122]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.23628771, 0)
 shape = SubResource("BoxShape3D_txh2y")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=835054305]
+stream = ExtResource("3_370ap")

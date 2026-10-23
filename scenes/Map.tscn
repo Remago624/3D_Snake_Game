@@ -3,11 +3,14 @@
 [ext_resource type="Script" uid="uid://uyyc36h6m1x6" path="res://scripts/world.gd" id="1_7ctrk"]
 [ext_resource type="Texture2D" uid="uid://dr0mc2lv6dm2o" path="res://assets/forrest_ground_01_diff_2k.jpg" id="1_lajc7"]
 [ext_resource type="PackedScene" uid="uid://er45mo73ra8h" path="res://scenes/snake.tscn" id="2_lajc7"]
+[ext_resource type="AudioStream" uid="uid://dwnqw5d3t11b8" path="res://assets/freesound_gamestudio-drop-coin-384921.mp3" id="3_hit12"]
+[ext_resource type="AudioStream" uid="uid://b7no6rgynnu5y" path="res://assets/freesound_community-eating-sound-effect-36186.mp3" id="4_sdw7q"]
 [ext_resource type="Shader" uid="uid://bi3o8elbtqoni" path="res://addons/simplegrasstextured/shaders/grass.gdshader" id="7_46d0c"]
 [ext_resource type="PackedScene" uid="uid://doq54mt4t5hrs" path="res://scenes/food.tscn" id="7_inly4"]
 [ext_resource type="Texture2D" uid="uid://c4ggdp0kg5wjk" path="res://addons/simplegrasstextured/textures/grassbushcc008.png" id="8_d46yu"]
 [ext_resource type="ArrayMesh" uid="uid://sptcpdx6wtm8" path="res://addons/simplegrasstextured/default_mesh.tres" id="9_hit12"]
 [ext_resource type="PackedScene" uid="uid://dmj1we3vhws3f" path="res://scenes/coin.tscn" id="9_ii6k2"]
+[ext_resource type="AudioStream" uid="uid://civ3xiwumemnf" path="res://assets/Serenity.mp3" id="9_sdw7q"]
 [ext_resource type="PackedScene" uid="uid://oy86001bnysq" path="res://scenes/hud.tscn" id="10_46d0c"]
 [ext_resource type="Script" uid="uid://2juaclm8gc1n" path="res://addons/simplegrasstextured/grass.gd" id="10_sdw7q"]
 
@@ -81,6 +84,14 @@ script = ExtResource("1_7ctrk")
 [node name="Snake" parent="." unique_id=1893879316 instance=ExtResource("2_lajc7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.6, 1.3000001, 2.9)
 
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Snake/Head" parent_id_path=PackedInt32Array(1893879316, 1113832427) index="3" unique_id=758738646]
+stream = ExtResource("3_hit12")
+volume_db = -15.0
+
+[node name="AudioStreamPlayer3D2" type="AudioStreamPlayer3D" parent="Snake/Head" parent_id_path=PackedInt32Array(1893879316, 1113832427) index="4" unique_id=2024465737]
+stream = ExtResource("4_sdw7q")
+volume_db = -15.0
+
 [node name="StaGroundticBody3D" type="StaticBody3D" parent="." unique_id=584323357]
 
 [node name="mesh" type="MeshInstance3D" parent="StaGroundticBody3D" unique_id=1206466080]
@@ -100,7 +111,7 @@ visible = false
 mesh = SubResource("BoxMesh_xkm8s")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="wall" unique_id=1926327199]
-transform = Transform3D(50, 0, 0, 0, 3, 0, 0, 0, 1, 0, 1.5, 23)
+transform = Transform3D(50, 0, 0, 0, 3, 0, 0, 0, 1, 0, 1.5, 25.50172)
 shape = SubResource("BoxShape3D_xkm8s")
 
 [node name="wall2" type="StaticBody3D" parent="." unique_id=759678514]
@@ -111,7 +122,7 @@ visible = false
 mesh = SubResource("BoxMesh_tm3qm")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="wall2" unique_id=1169989276]
-transform = Transform3D(50, 0, 0, 0, 3, 0, 0, 0, 1, 0, 1.5, -23.009743)
+transform = Transform3D(50, 0, 0, 0, 3, 0, 0, 0, 1, 0, 1.5, -25.230225)
 shape = SubResource("BoxShape3D_tm3qm")
 
 [node name="wall3" type="StaticBody3D" parent="." unique_id=1624908504]
@@ -122,7 +133,7 @@ visible = false
 mesh = SubResource("BoxMesh_tm3qm")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="wall3" unique_id=546305931]
-transform = Transform3D(0.04722485, 0, -0.9999995, 0, 3, 0, 49.999977, 0, 0.00094449706, 22.565763, 1.5, 0.20659351)
+transform = Transform3D(0.04722485, 0, -0.9999995, 0, 3, 0, 49.999977, 0, 0.00094449706, 25.185862, 1.5, 0.20659351)
 shape = SubResource("BoxShape3D_yyirk")
 
 [node name="wall4" type="StaticBody3D" parent="." unique_id=71703923]
@@ -133,7 +144,7 @@ visible = false
 mesh = SubResource("BoxMesh_tm3qm")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="wall4" unique_id=21793736]
-transform = Transform3D(0.04722485, 0, -0.9999995, 0, 3, 0, 49.999977, 0, 0.00094449706, -22.631952, 1.5, 0.20659351)
+transform = Transform3D(0.04722485, 0, -0.9999995, 0, 3, 0, 49.999977, 0, 0.00094449706, -25.072382, 1.5, 0.20659351)
 shape = SubResource("BoxShape3D_41ykk")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1795247437]
@@ -199,7 +210,7 @@ wait_time = 3.0
 autostart = true
 
 [node name="spawn_Money_timer" type="Timer" parent="." unique_id=1747244901]
-wait_time = 3.0
+wait_time = 10.0
 autostart = true
 
 [node name="food" parent="." unique_id=1382616051 instance=ExtResource("7_inly4")]
@@ -209,6 +220,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 2.2333443, 10.260166)
 
 [node name="HUD" parent="." unique_id=2076877571 instance=ExtResource("10_46d0c")]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="HUD" unique_id=944289786]
+stream = ExtResource("9_sdw7q")
+autoplay = true
+parameters/looping = true
 
 [node name="SimpleGrassTextured3" type="MultiMeshInstance3D" parent="." unique_id=1325386200]
 material_override = SubResource("ShaderMaterial_pgwcf")

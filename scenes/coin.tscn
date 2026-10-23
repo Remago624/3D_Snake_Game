@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c6l23oagylqks" path="res://scripts/coin.gd" id="1_rwqht"]
 [ext_resource type="PackedScene" uid="uid://c16880hh3mqbq" path="res://assets/Ana ely 3amelha/Coin.glb" id="2_i64fm"]
+[ext_resource type="AudioStream" uid="uid://dwnqw5d3t11b8" path="res://assets/freesound_gamestudio-drop-coin-384921.mp3" id="3_11l1o"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_txh2y"]
 height = 0.15
@@ -61,3 +62,6 @@ one_shot = true
 explosiveness = 1.0
 process_material = SubResource("ParticleProcessMaterial_o8a80")
 draw_pass_1 = SubResource("CylinderMesh_rwqht")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=504008591]
+stream = ExtResource("3_11l1o")

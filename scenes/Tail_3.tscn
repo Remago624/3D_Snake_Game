@@ -10,6 +10,10 @@ top_radius = 0.241
 bottom_radius = 0.086
 height = 1.0
 
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_f0tok"]
+height = 0.9223633
+radius = 0.1303711
+
 [node name="Tail" type="Node3D" unique_id=1207453985]
 script = ExtResource("1_tkdbg")
 
@@ -17,3 +21,9 @@ script = ExtResource("1_tkdbg")
 transform = Transform3D(4.37114e-08, -7.54979e-08, -1, 1, 7.54979e-08, 4.3711392e-08, 7.54979e-08, -1, 7.54979e-08, 0, 0, 0)
 material_override = SubResource("StandardMaterial3D_tkdbg")
 mesh = SubResource("CylinderMesh_0omey")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=645257705]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=602419095]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 5.2291504e-10, 0.011962891)
+shape = SubResource("CylinderShape3D_f0tok")

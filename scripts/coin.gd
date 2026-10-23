@@ -15,6 +15,7 @@ func _process(delta): #making it spin (around the world around the world)
 func _on_body_enterd(body): 
 		print("i like money  :", body.name)
 		if body.name == "Snake":
+			$"../Snake/Head/AudioStreamPlayer3D".play()
 			$GPUParticles3D.emitting = true
 			$Coin.visible = false
 			Gamemaneger.money += 1

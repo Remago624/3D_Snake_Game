@@ -1,7 +1,6 @@
 extends Node3D
 
 signal eaten
-
 var time := 0.0
 
 func _ready() -> void:
@@ -10,6 +9,7 @@ func _ready() -> void:
 func _on_body_entered(body): #emiting a signal
 	print("food eat", body.name)
 	if body.name == "Snake":
+		$"../Snake/Head/AudioStreamPlayer3D2".play()
 		eaten.emit()
 		queue_free()
 		Gamemaneger.score += 100

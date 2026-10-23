@@ -21,6 +21,7 @@ const history_spacing = 0.05
 var tail_scene = preload("res://scenes/Tail_1.tscn")
 
 func _ready() -> void:
+	$Head/Area3D/CollisionShape3D.disabled = true
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	target_y = rotation.y
 	for child in tails_parent.get_children():
@@ -134,3 +135,14 @@ func grow():
 	#new_tail.rotation = Vector3.ZERO
 	#tails.push_front(new_tail)
 	#new_tail.get_node("tesh").emitting = true
+
+
+func _on_area_3d_area_entered(area: Area3D) -> void:
+	if area == $Tails/Tail3/Area3D or area == $Tails/Tail2/Area3D or area == $Tails/Tail/Area3D:
+		get_tree().reload_current_scene()
+		Gamemaneger.money = 0
+		Gamemaneger.score = 0
+
+
+func _on_timer_timeout() -> void:
+	$Head/Area3D/CollisionShape3D.disabled = false
