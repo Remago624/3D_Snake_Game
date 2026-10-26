@@ -3,9 +3,7 @@
 .godot/
 /android/
 
-addons/*
 !addons/godot_super-wakatime/
 addons/godot_super-wakatime/*
 !addons/godot_super-wakatime/**
 
-.addons/
